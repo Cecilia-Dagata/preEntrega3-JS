@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Los destinos son únicos, las experiencias también. Elije cada detalle de tu viaje.">
+    <meta name="keywords"
+        content="Turismo negro, experiencias paranormales, viajes exóticos, turismo diferente, turismo oculto, emociones fuertes,">
+    <title>OTRO LADO</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:ital,wght@0,200;0,600;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/33ded919a4.js" crossorigin="anonymous"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/class.js"></script>
+    <script defer src="js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar  navbar-expand-md fixed-top border border-3 border-bottom bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid imagotipo" src="./assets/logo/logo.jpg"
+                        alt="logo en azul y oro de la empresa Otro Lado">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" button-outline data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
+                                    alt="imagen de carrito de compras" id="carritoContenedor">
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="bgHome">
+            <h1 class="mainTitH">TURISMO NEGRO</h1>
+            <h1 class="col-lg-12 col-md-12 col-sm-12 mainTitP animate__animated animate__slideInUp">SOY PAS ¿Y AHORA
+                QUÉ?</h1>
+        </div>
+        <div class="container">
+            <section class="row d-flex justify-content-center">
+                <h2 class="secondTitH animate__animated animate__slideInUp">¿Qué es el turismo negro ?</h2>
+            </section>
+        </div>
+
+        <main class="container">
+            <h3 class="thirdTitP">EXCURSIONES</h3>
+            <section class="row d-flex justify-content-around" id="container">
+                <input type="search" id="search" placeholder="buscar">
+            </section>
+
+            <div class="container">
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">TU SELECCION</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="vaciarCarrito">VACIAR</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    id="procesarCompra">FINALIZAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="container-fluid">
+            <div class="col animate__animated animate__fadeInUp">
+                <img class="row-lg-12 row-md-10 row-sm-10 d-block mx-auto img-fluid isotipo" src="./assets/logo/logo.jpg" alt="imagen ">
+                <p class="row-lg-10 row-md-8 row-sm-6 presentacion"></p>
+            </div>
+            <div class="row border border-3">
+                <div class="col-lg-12 col-md-12 col-sm-12 icons">
+                    <a href="" target="_blank"><i class="fa-brands fa-instagram fa-1x"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-square-facebook fa-1x"></i></a>
+                    <a href="" target="_blank">
+                        <i class="fa-brands fa-twitter fa-1x"></i></a>
+                    <a href="" target="_blank">
+                        <i class="fa-brands fa-whatsapp fa-1x"></i></a>
+                </div>
+                <div class="row links">
+                    <a class="col-lg-3 col-md-3 col-sm-12" href="#">Preguntas frecuentes</a>
+                    <a class="col-lg-3 col-md-3 col-sm-12" href="#">Links de interés</a>
+                    <a class="col-lg-3 col-md-3 col-sm-12" href="#">Política de privacidad</a>
+                    <a class="col-lg-3 col-md-3 col-sm-12" href="#">Términos de uso</a>
+                </div>
+                <div class="row derechos">
+                    <p class="text-center">Todos los derechos reservados</p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
