@@ -44,12 +44,10 @@
                 </button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <button type="button" button-outline data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
-                                    alt="imagen de carrito de compras" id="carritoContenedor">
-                            </a>
-                        </button>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="evento">
+                            <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
+                                    alt="imagen de carrito de compras" id="carritoContenedor">0
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -59,19 +57,24 @@
     <main>
         <div class="bgHome">
             <h1 class="mainTitH">TURISMO NEGRO</h1>
-            <h1 class="col-lg-12 col-md-12 col-sm-12 mainTitP animate__animated animate__slideInUp">SOY PAS ¿Y AHORA
-                QUÉ?</h1>
         </div>
         <div class="container">
             <section class="row d-flex justify-content-center">
-                <h2 class="secondTitH animate__animated animate__slideInUp">¿Qué es el turismo negro ?</h2>
+                <h2 class="secondTitH animate__animated animate__slideInUp">¿Cuál será tu próxima aventura?</h2>
             </section>
         </div>
 
         <main class="container">
             <h3 class="thirdTitP">EXCURSIONES</h3>
+            <form>
+                <select name="accion" id="accion" class="selectForm">
+                    <option value="consulta">TEMATICA</option>
+                    <option value="informacion">DIFICULTAD</option>
+                    <option value="comentario">DURACION</option>
+                    <option value="experiencia">PRECIOS</option>
+                </select>
+            </form>
             <section class="row d-flex justify-content-around" id="container">
-                <input type="search" id="search" placeholder="buscar">
             </section>
 
             <div class="container">
@@ -81,22 +84,71 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">TU SELECCION</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel">TU SELECCIÓN</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" id="modalBody">
                                 ...
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" id="vaciarCarrito">VACIAR</button>
                                 <button type="button" class="btn btn-success" data-bs-dismiss="modal"
                                     id="procesarCompra">FINALIZAR</button>
+                                <span>Subtotal:</span>
+                                <p class="text-center" id="subtotal"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="container">
+                <h2 class="secondTitP">DETALLE DE TU COMPRA</h2>
+                <div class="contenedor" id="cierre">
+                    <div class="contactForm">
+                        <form>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="inputForm" id="nombre" required>
+                            <label for="email">E-mail</label>
+                            <input type="text" class="inputForm" id="email" required>
+                            
+                            <label for="formarDePago">Formas de Pago</label>
+                            <div class="radioButtons">
+                                <label for="debito">
+                                    <input class="radio" type="radio" name="formarDePago" id="debito">Débito</label>
+                                <label for="credito">
+                                    <input class="radio" type="radio" name="formarDePago" id="credito">Crédito</label>
+                                <label for="transferencia">
+                                    <input class="radio" type="radio" name="formarDePago" id="Transferencia">Transferencia</label>
+                            </div>
+                            
+                            <div class="checkUso">
+                                <input type="checkbox" name="acepto" id="terminos de uso">
+                                <a class="terminosDeUso" href="#"><p for="terminos de uso">He leído y acepto los términos de uso</p>
+                                </a>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <input class="buttonH text-center" type="submit" value="PAGAR">
+                            </div>
+                        </form>
+                    </div>
+                    <table class="col-xxl-5 col-xl-12 contenedorTabla" id="listaCompra">
+                        <thead class="border border-bottom">
+                            <tr class="border border-bottom">
+                                <th class="text-center">dificultad</th>
+                                <th class="text-center">detalle</th>
+                                <th class="text-center">duracion</th>
+                                <th class="text-center">precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
         </main>
 
         <footer class="container-fluid">

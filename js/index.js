@@ -1,17 +1,25 @@
 let codigo = " "
 let tarifaServicio = 0.03
+let seleccion = " "
+let carrito = []
+
 const carritoContenedor = document.querySelector("#carritoContenedor")
 const vaciar = document.querySelector("#vaciarCarrito")
-const procesar = document.querySelector("#procesarCompra")
-const search = document.querySelector("input#search")
-
+const tabla = document.querySelector("tbody")
+const subtotal = document.querySelector("#subtotal")
+const finalizar = document.querySelector("#procesarCompra")
+const iCarrito = document.querySelector("#evento")
 
 document.addEventListener("DOMContentLoaded", () => {
     carrito = JSON.parse(localStorage.getItem("carrito")) || []
     visualizarCarrito()
 })
-
+  
 habilitarExcursion()
+
+iCarrito.addEventListener("onmouseenter", ()=>{
+    visualizarCarrito()
+} )
 
 function maquetarCard(excursion) {
     return `<div class="col-lg-4 col-md-6 col-sm-6 card">
@@ -20,8 +28,8 @@ function maquetarCard(excursion) {
                 <div class="card-body">
                     <h5 class="card-title">${excursion.detalle}</h5>
                     <p class="card-text">${excursion.codigo}</p>
-                    <button onclick="agregarExcursion(${excursion.codigo})" type="button" class="btn btn-outline-primary" id= "${excursion.codigo}">agregar</button>
-                </div>
+                    <button type="button" onclick="agregarExcursion(${excursion.codigo})" class="btn btn-outline-primary" id= "${excursion.codigo}">agregar</button>
+                 </div>
             </div>`
 }
 
@@ -33,55 +41,38 @@ function completarCard() {
     });
 } completarCard()
 
-/*function filtrarPrecios() {
-    let precioIngresado = parseInt(prompt("Ingresa un valor para conocer las excursiones disponibles"))
 
-    const rangoUno = excursiones.filter(excursion => excursion.precio > 0 && excursion.precio <= 30000) === precioIngresado;
-    console.table(rangoUno)
-    const rangoDos = excursiones.filter(excursion => excursion.precio > 31000 && excursion.precio <= 70000 === precioIngresado);
-    console.table(rangoDos)
-    const rangoTres = excursiones.filter(excursion => excursion.precio > 71000 && excursion.precio <= 100000 === precioIngresado);
-    console.table(rangoTres)
+const maquetarTabla = (excursion) =>{
+    return `<tr>
+                <td>${excursion.dificultad}</td>
+                <td>${excursion.detalle}</td>
+                <td>${excursion.duracion}</td>
+                <td>$ ${excursion.precio * tarifaServicio}</td>
+           </tr>`
 }
- filtrarPrecios()*/
 
-
-function filtrarTematica() {
-    let opcionesPorTematica = excursiones.filter((excursion) => excursion.tematica.toLowerCase().includes(search.value.trim().toLowerCase()))
-
-    if (opcionesPorTematica.length === 0) {
-        filtrarTematica()
-    } else {
-        completarCard(opcionesPorTematica)
-    } return (opcionesPorTematica)
-}
-search.addEventListener("search", filtrarTematica)
-
-
-function buscarExcursion(codigo) {
-    // codigoIngresado = parseInt(prompt("Ingresa el código de una excursión"))
-    codigo = excursiones.find((excursion) => excursion.codigo === parseInt(codigo))
-
-    if (codigo === undefined) {
-        console.error("El código ingresado no es válido. Reinténtelo.")
-    } else {
-        console.log(codigo)
-    } return codigo
+function cargarTabla (excursiones){
+    tabla.innerHTML = " "
+    
+    carrito.forEach((excursion) => {
+        tabla.innerHTML += maquetarTabla(excursion)
+    })
 }
 
 function agregarExcursion(codigo) {
-   const existencias = carrito.some(excursion.codigo === codigo)
-
-    if(existencias){
-        const excursion = carrito.map(excursion => {
-            if(excursion.codigo === codigo)
-            modalBody.innerHTML = `<p class ="text-center text-warning">Ya seleccionaste esta excursion previamente</p>`
-        })
-    }else{
-        let excursionSeleccionada = excursiones.find((excursion) => excursion.codigo === codigo)
-        carrito.push(excursionSeleccionada)
-    }
+    const existencias = carrito.some(excursion => excursion.codigo === codigo)
     
+    if(existencias){
+        seleccion = carrito.map(excursion => {
+            if(excursion.codigo === codigo){
+                modalBody.innerHTML = `<p class ="text-center text-warning">Ya seleccionaste esta excursion previamente</p>` 
+            }
+        })
+    } else {
+        seleccion = excursiones.find((excursion) => excursion.codigo === codigo)
+        carrito.push(seleccion)
+        guardarLocalStorage()
+    }
     visualizarCarrito()
 }
 
@@ -92,70 +83,66 @@ vaciarCarrito.addEventListener("click", () => {
 
 function visualizarCarrito() {
     const modal = document.querySelector(".modal .modal-body")
-
+    modal.innerHTML =" "
+    
     carrito.forEach((excursion) => {
-        const { imagen, tematica, codigo, nivel, dificultad, detalle, duracion, precio } = excursion
-        modal.innerHTML += `<div class= "modal-contenedor">
-                            </div>
-                            <img class="img-fluid i-carrito" src = "${imagen}"
+        const { imagen, codigo, nivel, precio } = excursion
+        modal.innerHTML += `<div class= "modalContenedor">
+                                <img class="img-fluid imgCarrito" src = "${imagen}"
                             alt="imagen de un sitio turístico">
                             <div>
-                                <p>${detalle}</p>
+                                <p>${codigo}</p>
+                                <p>${nivel}</p>   
                                 <p>${precio}</p>
-                                <button onclick= "eliminarExcursion(${codigo})" type="button" class="btn btn-outline-danger">eliminar</button>
+                                <button onclick= "eliminarExcursion(${codigo})" type="button" class="btn btn-outline-danger">ELIMINAR</button>
+                            </div> 
                             </div>`
+
     })
     if (carrito.length === 0) {
-        modalBody.innerHTML = `<p class ="text-center text-primary">Agrega excursiones a tu carrito</p>`
+        modalBody.innerHTML = `<p class ="text-center text-black alertModal">¡oh oh!,parece que tu carrito está vacío.</p>`
     }
-
     carritoContenedor.textContent = carrito.length
-    guardarEnLocalS()
+
+    subtotal.innerHTML = carrito.reduce ((acc, excursion)=> acc + excursion.precio, 0)
+
+    guardarLocalStorage()
 }
 
 function eliminarExcursion(codigo) {
-    const excursionEliminada = codigo
-    carrito = carrito.filter((excursion) => excursion.codigo !== excursionEliminada)
+    const descarte = codigo
+    carrito = carrito.filter((excursion) => excursion.codigo !== descarte)
     visualizarCarrito()
-}
-
-function guardarEnLocalS() {
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-}
-
-
-function calcularCosto() {
-    let totalFinal = carrito.reduce((acc, excursion) => acc + excursion.precio * tarifaServicio, 0)
-   
 }
 
 procesarCompra.addEventListener("click", ()=> {
     if(carrito.length === 0){
                             `<div class="alert alert-warning d-flex align-items-center" role="alert">
-                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Tu carrito esta vacio">
+                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Agrega excursiones para continuar">
                                  <use xlink:href="#exclamation-triangle-fill"/></svg>
                              </div>`
     }else{
-        location.href = "checkout.html"
+        cargarTabla()
     }
 })
 
 function procesarCompra(){
     carrito.forEach ((excursion) => {
         const listaCompra = document.querySelector("#listaCompra tbody")
-        
+        const {nivel, dificultad, detalle, duracion, precio} = excursion
 
     })
 }
 
-function maquetarCheckOut(excursion) {
-    const tableBody = document.querySelector("tbody")
-    return `<tr>
-        <td>${excursion.nivel}</td>
-        <td>${excursion.dificultad}</td>
-        <td>${excursion.detalle}</td>
-        <td>${excursion.duracion}</td>
-        <td>${excursion.precio}</td>
-        
-</tr>`
+function calcularCostoFinal() {
+    let totalFinal = carrito.reduce((acc, excursion) => acc + excursion.precio * tarifaServicio, 0)
+   
 }
+/*
+const activarBotones = () =>{
+    const botones = document.querySelectorAll("")
+    for (boton of botones){
+        botones.addEventListener("click", (e)=> {})
+    }
+}
+*/

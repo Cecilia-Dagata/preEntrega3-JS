@@ -4,7 +4,7 @@
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-family: "Poiret One", cursive;
-    line-height: 1.7rem;
+    line-height: 1.3rem;
     font-weight: 600;
     text-align: justify;
   }
@@ -16,22 +16,8 @@
     letter-spacing: 0.3rem;
   }
   
-  .mainTitP {
-    color: rgb(0, 80, 0);
-    font-size: 2.8rem;
-    margin-top: 17vh;
-    margin-bottom: 2vh;
-    animation-duration: 2s;
-  }
-  @media screen and (max-width: 576px) {
-    .mainTitP {
-      font-size: 2.4rem;
-      padding: 0px 15px;
-    }
-  }
-  
   .secondTitP {
-    color: rgb(4, 111, 4);
+    color: rgb(19, 83, 245);
     font-size: 2.6rem;
     margin-top: 3vh;
     margin-bottom: 3vh;
@@ -45,9 +31,9 @@
   }
   
   .thirdTitP {
-    color: rgb(2, 143, 2);
-    font-size: 2.4rem;
-    margin-top: 12vh;
+    color: rgb(0, 47, 149);
+    font-size: 2.2rem;
+    margin-top: 30vh;
     margin-bottom: 7vh;
   }
   @media screen and (max-width: 576px) {
@@ -60,7 +46,7 @@
   }
   
   .fourthTitleP {
-    color: rgb(0, 189, 0);
+    color: rgb(0, 6, 60);
     font-size: 2.2rem;
     margin-top: 6vh;
   }
@@ -69,35 +55,6 @@
       font-size: 1.5rem;
       margin-top: 12%;
       padding: 0 10%;
-    }
-  }
-  
-  .fraseP, .fraseH {
-    color: rgb(145, 110, 35);
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  
-  .fraseH {
-    margin: 35px 15px;
-    padding: 15px 40px;
-  }
-  @media screen and (max-width: 576px) {
-    .fraseH {
-      font-size: 1.1rem;
-      padding: 0px 15px;
-    }
-  }
-  
-  .fraseP {
-    margin-top: 5vh;
-    margin-bottom: 3vh;
-    padding: 0px 20px;
-  }
-  @media screen and (max-width: 576px) {
-    .fraseP {
-      font-size: 1.1rem;
-      margin-top: 0%;
     }
   }
   
@@ -132,6 +89,7 @@
     }
   }
   
+  /*base*/
   .navbar {
     height: 12vh;
   }
@@ -147,9 +105,11 @@
   .carrito{
     width: 40px;
   }
+
   .navbar-toggler {
     border: none !important;
   }
+
   .navbar-toggler:focus {
     box-shadow: none !important;
   }
@@ -157,25 +117,36 @@
   svg {
     height: 2.8rem;
   }
-  
-  .nav-link {
-    color: rgb(71, 161, 49);
-    font-size: 1.3rem;
-    text-align: center;
-  }
-  
+   
   #navbarNav {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(91, 106, 241, 0.468);
   }
   
+  .modalContenedor{
+    display: flex;
+    align-items: center;
+  }
+  
+  .modalContenedor p{
+    font-size: 1.2rem;
+   }
+   
+  .imgCarrito{
+    width: 269px;
+    padding: 35px 25px ;
+    
+  }
+  .btn{
+    margin-left: 5px;
+  }
+  .alertModal{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
   /*HOME*/
+
   .bgHome {
-    padding-top: 75vh;
-    background-image: url(../../assets/logo/logo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    padding-top: 40vh;
     width: 100%;
   }
   @media screen and (max-width: 1200px) {
@@ -208,27 +179,15 @@
   }
   
   .secondTitH {
-    color: rgb(4, 111, 4);
-    font-weight: 600;
-    text-align: center;
-    margin-top: 2vh;
+    color: rgb(0, 26, 41);
+    text-align: end;
+    margin-top: 3vh;
     margin-bottom: 4vh;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     letter-spacing: 0.3rem;
   }
 
-  
-  .thirdTitH {
-    font-size: 2.4rem;
-    color: rgb(2, 143, 2);
-    text-align: center;
-    margin-top: 4vh;
-    margin-bottom: 3vh;
-    font-weight: 600;
-    letter-spacing: 0.3rem;
-  }
 
-  
   .buttonH:hover {
     background: rgb(246, 255, 0);
     transition: all 0.5s ease-in-out;
@@ -254,16 +213,14 @@
   
   /*DESCUBRE*/
   .contenedorTabla {
-    width: 40vw;
+    width: 45vw;
     margin: 5px 20px 5px 40px;
   }
-  .contenedorTabla tr:nth-child(even) {
-    background-color: hsla(109, 88%, 90%, 0.775);
-  }
+  
   .contenedorTabla th, .contenedorTabla td {
-    padding: 3px 3px;
+    padding: 3px 2px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   @media screen and (max-width: 1200px) {
     .contenedorTabla {
@@ -278,71 +235,28 @@
     }
   }
   
-  .tdNumero {
-    width: 40px;
-    text-align: center;
+  .card {
+    width: 420px;
+    margin: 5px 2px 15px 2px;
+    box-shadow: 0px 9px 18px -5px rgba(0, 0, 0, 0.3);
   }
-  
-  .resultados {
-    margin-bottom: 7vh;
-  }
-  
-  .resultadosBox {
-    width: 550px;
-    height: 38vh;
-    margin: 1vh 4vh 10vh 4vh;
-    padding: 10px 25px;
-    box-shadow: 0px 9px 18px -5px rgba(200, 62, 126, 0.308);
-  }
-  @media screen and (max-width: 1200px) {
-    .resultadosBox {
-      height: 48vh;
-    }
-  }
-  
-  .resultadosTit {
-    text-align: center;
-    color: rgb(200, 62, 126);
-    font-size: 1.2rem;
-  }
-  @media screen and (max-width: 1200px) {
-    .resultadosTit {
-      padding-top: 30px;
-    }
-  }
-  
-  .fondoDatosP {
-    background: linear-gradient(white, rgb(255, 251, 50));
-    width: 90%;
-    padding: 10px;
-    margin: 8vh auto;
-    box-shadow: 0px 7px 22px -7px rgba(0, 0, 0, 0.3);
-  }
-  .fondoDatosP a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  
-  .buttonMasInfo:hover {
-    background: rgb(200, 62, 126);
-    transform: 2s ease;
-  }
-  
 
-
-
-  
-  .size{
-    width: fit-content;
-    max-height: 650px;
+  .card-img-top {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    margin-top: 7px;
+    animation-name: aparecer;
+    animation-iteration-count: initial;
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-delay: 1s;
   }
 
   .card-text {
     font-style: normal;
   }
-  
- 
+
   .inputEmail {
     width: 260px;
     padding: 1px 20px;
@@ -355,7 +269,7 @@
   }
   
   .buttonH:hover {
-    background: rgb(246, 255, 0);
+    background: rgb(132, 222, 247);
     width: 170px;
     transition: all 0.5s ease-in-out;
   }
@@ -405,7 +319,7 @@
   .contactForm {
     grid-area: contactForm;
     height: fit-content;
-    background-color: rgba(245, 189, 228, 0.323);
+    background-color: rgba(189, 225, 245, 0.323);
   }
   .contactForm form {
     width: 100%;
