@@ -34,19 +34,11 @@
                     <img class="img-fluid imagotipo" src="./assets/logo/logo.jpg"
                         alt="logo en azul y oro de la empresa Otro Lado">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="evento">
                             <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
-                                    alt="imagen de carrito de compras" id="carritoContenedor">0
+                                alt="imagen de carrito de compras" id="carritoContenedor">
                         </a>
                     </li>
                 </ul>
@@ -65,18 +57,9 @@
         </div>
 
         <main class="container">
-            <h3 class="thirdTitP">EXCURSIONES</h3>
-            <form>
-                <select name="accion" id="accion" class="selectForm">
-                    <option value="consulta">TEMATICA</option>
-                    <option value="informacion">DIFICULTAD</option>
-                    <option value="comentario">DURACION</option>
-                    <option value="experiencia">PRECIOS</option>
-                </select>
-            </form>
+            <h2 class="secondTitP">EXCURSIONES</h2>
             <section class="row d-flex justify-content-around" id="container">
             </section>
-
             <div class="container">
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -103,17 +86,18 @@
                 </div>
             </div>
 
-
             <div class="container">
-                <h2 class="secondTitP">DETALLE DE TU COMPRA</h2>
-                <div class="contenedor" id="cierre">
+                <h3 class="thirdTitP">DETALLE DE TU COMPRA</h3>
+                <div class="contenedor">
+                    <div class="alert alert-warning disabled" role="alert" id="alerta">
+                    </div>
                     <div class="contactForm">
                         <form>
                             <label for="nombre">Nombre</label>
                             <input type="text" class="inputForm" id="nombre" required>
                             <label for="email">E-mail</label>
                             <input type="text" class="inputForm" id="email" required>
-                            
+
                             <label for="formarDePago">Formas de Pago</label>
                             <div class="radioButtons">
                                 <label for="debito">
@@ -121,39 +105,47 @@
                                 <label for="credito">
                                     <input class="radio" type="radio" name="formarDePago" id="credito">Crédito</label>
                                 <label for="transferencia">
-                                    <input class="radio" type="radio" name="formarDePago" id="Transferencia">Transferencia</label>
+                                    <input class="radio" type="radio" name="formarDePago"
+                                        id="Transferencia">Transferencia</label>
                             </div>
-                            
+
                             <div class="checkUso">
                                 <input type="checkbox" name="acepto" id="terminos de uso">
-                                <a class="terminosDeUso" href="#"><p for="terminos de uso">He leído y acepto los términos de uso</p>
+                                <a class="terminosDeUso" href="#">
+                                    <p for="terminos de uso">He leído y acepto los términos de uso</p>
                                 </a>
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <input class="buttonH text-center" type="submit" value="PAGAR">
+                                <input class="buttonH text-center" type="submit" value="PAGAR" id="pagar">
                             </div>
                         </form>
                     </div>
-                    <table class="col-xxl-5 col-xl-12 contenedorTabla" id="listaCompra">
-                        <thead class="border border-bottom">
+                    <table class="col-xxl-4 col-xl-12 contenedorTabla" id="carritoCargado">
+                        <thead>
                             <tr class="border border-bottom">
-                                <th class="text-center">dificultad</th>
-                                <th class="text-center">detalle</th>
-                                <th class="text-center">duracion</th>
-                                <th class="text-center">precio</th>
+                                <th class="text-start">DIFICULTAD</th>
+                                <th class="text-start">DETALLE</th>
+                                <th class="text-start">DURACIÓN</th>
+                                <th class="text-start">PRECIO</th>
                             </tr>
                         </thead>
                         <tbody>
                         </tbody>
+                        <tr>
+                            <th colspan="1" scope="col" class="text-start">TOTAL: $
+                                <p id="totalFinal"></p>
+                            </th>
+                        </tr>
                     </table>
                 </div>
-            </div> 
+            </div>
         </main>
 
         <footer class="container-fluid">
             <div class="col animate__animated animate__fadeInUp">
-                <img class="row-lg-12 row-md-10 row-sm-10 d-block mx-auto img-fluid isotipo" src="./assets/logo/logo.jpg" alt="imagen ">
+                <img class="row-lg-12 row-md-10 row-sm-10 d-block mx-auto img-fluid isotipo"
+                    src="./assets/logo/logo.jpg" alt="imagen ">
                 <p class="row-lg-10 row-md-8 row-sm-6 presentacion"></p>
             </div>
             <div class="row border border-3">
@@ -177,8 +169,8 @@
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

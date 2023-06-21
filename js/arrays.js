@@ -121,20 +121,3 @@ function habilitarExcursion (){ excursiones.push(new Excursion ("./assets/array 
                                 excursiones.push(new Excursion ("./assets/array img/montsegur.jpg", "Experiencia paranormal", 48482, "plus", "media", "Montsegur: el castillo maldito", "2:20 horas", 27000))
                                 excursiones.push(new Excursion ("./assets/array img/amityville.jpg", "Experiencia paranormal", 48485, "premium", "alta", "Amityville: la casa de los asesinatos", "7:00 horas", 84500))
 }
-
-
-/*const guardarEnLocalS = ()=>{
-  if(carrito.lenght > 0){
-    JSON.stringify(carrito.map)
-  }
-}*/
-
-
-function guardarLocalStorage() {
-  localStorage.setItem("carrito", JSON.stringify(carrito))
-}
-
-function recuperarLocalStorage() {
- return JSON.parse(localStorage.getItem("carrito"))
-}
-

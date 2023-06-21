@@ -19,7 +19,7 @@
   .secondTitP {
     color: rgb(19, 83, 245);
     font-size: 2.6rem;
-    margin-top: 3vh;
+    margin-top: 40vh;
     margin-bottom: 3vh;
   }
   @media screen and (max-width: 576px) {
@@ -143,6 +143,7 @@
     font-size: 1.2rem;
     font-weight: 600;
   }
+
   /*HOME*/
 
   .bgHome {
@@ -211,7 +212,6 @@
     margin-bottom: 2vh;
   }
   
-  /*DESCUBRE*/
   .contenedorTabla {
     width: 45vw;
     margin: 5px 20px 5px 40px;
@@ -219,7 +219,7 @@
   
   .contenedorTabla th, .contenedorTabla td {
     padding: 3px 2px;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 1.1rem;
   }
   @media screen and (max-width: 1200px) {
@@ -230,8 +230,8 @@
   }
   @media screen and (max-width: 768px) {
     .contenedorTabla {
-      width: 80vw;
-      margin: 15px 10px 5px 10px;
+      width: 55vw;
+      margin: 15px 5px 15px 5px;
     }
   }
   
@@ -290,13 +290,14 @@
     margin-top: 15px;
   }
   
-  /*CHECKOUT*/
+
   .contenedor {
     display: grid;
-    max-height: 130vh;
-    justify-content: center;
+    min-height: 130vh;
+    justify-items: center;
+    align-items: baseline;
     grid-template-areas: "infoIframe contactForm" "mapIframe  contactForm" "lineaAsistencia lineaAsistencia";
-    grid-template-columns: 55% 1fr;
+    grid-template-columns: 60% 1fr;
     grid-template-rows: 310px auto auto;
     margin: auto;
     gap: 15px 20px;
@@ -381,8 +382,11 @@
     padding: 7px 7px;
   }
 
-  
-  /*
+  .disabled{
+    height: 50px;
+    display: none;
+  }
+
   /*footer*/
   footer {
     margin-top: 12%;
@@ -415,7 +419,7 @@
   
   .icons {
     margin: 10px auto;
-    width: 336px;
+    width: 265px;
   }
 
   .icons i {
