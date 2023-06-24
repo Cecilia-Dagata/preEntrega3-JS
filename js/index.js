@@ -1,6 +1,7 @@
 let tarifaServicio = 2000
 let codigo = " "
 let seleccion = " "
+let alerta = " "
 let carrito = []
 
 const carritoContenedor = document.querySelector("#carritoContenedor")
@@ -8,7 +9,7 @@ const vaciar = document.querySelector("#vaciarCarrito")
 const tabla = document.querySelector("tbody")
 const subtotal = document.querySelector("#subtotal")
 const finalizar = document.querySelector("#procesarCompra")
-const iCarrito = document.querySelector("#evento")
+
 const alerta = document.querySelector("#alerta")
 const totalFinal = document.querySelector("#totalFinal")
 const pagar = document.querySelector("#pagar")
@@ -24,10 +25,6 @@ function guardarLocalStorage() {
 }
 
 habilitarExcursion()
-
-iCarrito.addEventListener("onmouseenter", () => {
-    visualizarCarrito()
-})
 
 function maquetarCard(excursion) {
     return `<div class="col-lg-4 col-md-6 col-sm-6 card">
@@ -123,9 +120,7 @@ procesarCompra.addEventListener("click", () => {
     if (carrito.length !== 0) {
         cargarTabla(carrito)
     } else {
-        alerta.innerHTML = `<div class="alert alert-warning disabled" role="alert" id="alerta">
-        <p>No se puede procesar la compra. Agrega excursiones para continuar.</p>
-        </div>`
+        alerta.innerHTML = `<p>No se puede procesar la compra. Agrega excursiones para continuar.</p>`
     }
     totalFinal.innerText = carrito.reduce((acc, excursion) => acc + excursion.precio + tarifaServicio, 0)
 })

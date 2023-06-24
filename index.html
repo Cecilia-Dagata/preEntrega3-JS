@@ -35,8 +35,8 @@
                         alt="logo en azul y oro de la empresa Otro Lado">
                 </a>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="evento">
+                    <li class="nav-item" id="evento">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
                                 alt="imagen de carrito de compras" id="carritoContenedor">
                         </a>
@@ -89,8 +89,6 @@
             <div class="container">
                 <h3 class="thirdTitP">DETALLE DE TU COMPRA</h3>
                 <div class="contenedor">
-                    <div class="alert alert-warning disabled" role="alert" id="alerta">
-                    </div>
                     <div class="contactForm">
                         <form>
                             <label for="nombre">Nombre</label>
@@ -138,6 +136,8 @@
                             </th>
                         </tr>
                     </table>
+                </div>
+                <div class="alert alert-warning" role="alert" id="alerta">
                 </div>
             </div>
         </main>
