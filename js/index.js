@@ -10,7 +10,7 @@ const subtotal = document.querySelector("#subtotal")
 const finalizar = document.querySelector("#procesarCompra")
 const alerta = document.querySelector("#alerta")
 const totalFinal = document.querySelector("#totalFinal")
-const pagar = document.querySelector("#pagar")
+
 
 document.addEventListener("DOMContentLoaded", () => {
     carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -117,7 +117,7 @@ function eliminarExcursion(codigo) {
 procesarCompra.addEventListener("click", () => {
     if (carrito.length !== 0) {
         cargarTabla(carrito)
-        alerta.innerHTML = `<p>No se puede procesar la compra. Agrega excursiones.</p>`
+        alerta.innerHTML = ``
         alerta.classList.add("disabled")
 
     } else {
@@ -126,5 +126,3 @@ procesarCompra.addEventListener("click", () => {
     }
     totalFinal.innerText = carrito.reduce((acc, excursion) => acc + excursion.precio + tarifaServicio, 0)
 })
-
-
