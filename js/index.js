@@ -1,7 +1,6 @@
 let tarifaServicio = 2000
 let codigo = " "
 let seleccion = " "
-let alerta = " "
 let carrito = []
 
 const carritoContenedor = document.querySelector("#carritoContenedor")
@@ -9,7 +8,6 @@ const vaciar = document.querySelector("#vaciarCarrito")
 const tabla = document.querySelector("tbody")
 const subtotal = document.querySelector("#subtotal")
 const finalizar = document.querySelector("#procesarCompra")
-
 const alerta = document.querySelector("#alerta")
 const totalFinal = document.querySelector("#totalFinal")
 const pagar = document.querySelector("#pagar")
@@ -119,8 +117,14 @@ function eliminarExcursion(codigo) {
 procesarCompra.addEventListener("click", () => {
     if (carrito.length !== 0) {
         cargarTabla(carrito)
+        alerta.innerHTML = `<p>No se puede procesar la compra. Agrega excursiones.</p>`
+        alerta.classList.add("disabled")
+
     } else {
-        alerta.innerHTML = `<p>No se puede procesar la compra. Agrega excursiones para continuar.</p>`
+        alerta.innerHTML = `<p>No se puede procesar la compra. Agrega excursiones.</p>`
+        alerta.classList.remove("disabled")
     }
     totalFinal.innerText = carrito.reduce((acc, excursion) => acc + excursion.precio + tarifaServicio, 0)
 })
+
+

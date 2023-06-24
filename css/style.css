@@ -361,6 +361,15 @@ svg {
   height: 50px;
 }
 
+.alert p{
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.disabled{
+  display: none;
+}
+
 
 footer {
   margin-top: 12%;
@@ -462,8 +471,6 @@ footer {
     margin: 0px 0px 5px 5px;
   }
 }
-
-
 
 @media screen and (max-width: 576px) {
   .card {
