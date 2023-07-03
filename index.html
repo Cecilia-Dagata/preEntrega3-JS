@@ -6,22 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Los destinos son únicos, las experiencias también. Elije cada detalle de tu viaje.">
+        content="Los destinos son únicos, las experiencias también. Elije la tuya.">
     <meta name="keywords"
-        content="Turismo negro, experiencias paranormales, viajes exóticos, turismo diferente, turismo oculto, emociones fuertes,">
+        content="Turismo negro, experiencias paranormales, viajes exóticos, turismo diferente, turismo oculto">
     <title>OTRO LADO</title>
-    <link rel="shortcut icon" type="image/x-icon" href="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:ital,wght@0,200;0,600;0,800;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:ital,wght@0,200;0,600;0,800;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/33ded919a4.js" crossorigin="anonymous"></script>
-    <script src="js/arrays.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/variables.js"></script>
     <script src="js/class.js"></script>
     <script defer src="js/index.js"></script>
 </head>
@@ -38,7 +37,7 @@
                     <li class="nav-item" id="evento">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <img class="img-fluid carrito" src="./assets/logo/shopping-cart.webp"
-                                alt="imagen de carrito de compras" id="carritoContenedor">
+                                alt="imagen de carrito de compras" id="iconoCompra">
                         </a>
                     </li>
                 </ul>
@@ -57,8 +56,24 @@
         </div>
 
         <main class="container">
-            <h2 class="secondTitP">EXCURSIONES</h2>
-            <section class="row d-flex justify-content-around" id="container">
+            <h2 class="secondTitP" id="excursiones">EXCURSIONES</h2>
+            <p class="text-center">A continuación podrás encontrar excursiones de las siguientes temáticas: "Intervención humana", "Naturaleza hostil", "zona de desastre" y "Experiencia paranormal".</p>
+            <p class="text-center">Para armar tu paquete solo selecciona la que quieras!.</p>
+            
+            
+            
+            
+            <div class="busqueda">
+                <input type="search" class="barraDeBusqueda" spellcheck="false" id="buscarTematicas" placeholder="Ingresa una temática...">
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></a>
+            </div>
+                
+            
+            
+            <!-- <p class="text-center">Ingresa la cantidad de personas que van a viajar. </p>
+            <input type= "number" class="viajeros" id="cantidadViajeros"> -->
+            
+            <section class="row d-flex justify-content-around" id="contenedorCards">
             </section>
             <div class="container">
                 <!-- Modal -->
@@ -87,7 +102,7 @@
             </div>
 
             <div class="container">
-                <h3 class="thirdTitP">DETALLE DE TU COMPRA</h3>
+                <h3 class="thirdTitP">DETALLE DE TU PAQUETE DE VIAJE</h3>
                 <div class="contenedor">
                     <div class="contactForm">
                         <form>
@@ -104,7 +119,7 @@
                                     <input class="radio" type="radio" name="formarDePago" id="credito">Crédito</label>
                                 <label for="transferencia">
                                     <input class="radio" type="radio" name="formarDePago"
-                                        id="Transferencia">Transferencia</label>
+                                        id="transferencia">Transferencia</label>
                             </div>
 
                             <div class="checkUso">
@@ -113,17 +128,17 @@
                                     <p for="terminos de uso">He leído y acepto los términos de uso</p>
                                 </a>
                             </div>
-
+                            
                             <div class="d-flex justify-content-center">
-                                <input class="buttonH text-center" type="submit" value="PAGAR" id="pagar">
+                                <input class="buttonH text-center" type="submit" value="PAGAR"> 
                             </div>
                         </form>
                     </div>
                     <table class="col-xxl-4 col-xl-12 contenedorTabla" id="carritoCargado">
                         <thead>
                             <tr class="border border-bottom">
-                                <th class="text-start">DIFICULTAD</th>
                                 <th class="text-start">DETALLE</th>
+                                <th class="text-start">DIFICULTAD</th>
                                 <th class="text-start">DURACIÓN</th>
                                 <th class="text-start">PRECIO</th>
                             </tr>
@@ -131,14 +146,18 @@
                         <tbody>
                         </tbody>
                         <tr>
+                            <tr></tr>
+                            <input type="number" name="pasajeros" id="pasajeros">
+                           
                             <th colspan="1" scope="col" class="text-start">TOTAL: $
                                 <p id="totalFinal"></p>
                             </th>
                         </tr>
+                        <a href="#excursiones"><button class="buttonH" id="tematicaFiltro">SEGUIR COMPRA</button></a>
                     </table>
+                  
                 </div>
-                <div class="alert alert-warning disabled" role="alert" id="alerta">
-                </div>
+                
             </div>
         </main>
 

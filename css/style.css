@@ -76,21 +76,15 @@
   width: 170px;
 }
 
-.carrito {
+
+
+
+#iconoCompra {
   width: 40px;
 }
 
-.navbar-toggler {
-  border: none !important;
-}
 
-.navbar-toggler:focus {
-  box-shadow: none !important;
-}
 
-svg {
-  height: 2.8rem;
-}
 
 #navbarNav {
   background-color: rgba(91, 106, 241, 0.468);
@@ -165,6 +159,36 @@ svg {
   letter-spacing: 0.3rem;
 }
 
+
+
+
+
+.barraDeBusqueda{
+  width: 40vw;
+  margin-left: 22vw;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 13px;
+}
+
+
+
+.viajeros{
+  margin-left: 37vw;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .card {
   width: 420px;
   margin: 5px 2px 15px 2px;
@@ -185,6 +209,8 @@ svg {
 
 .card-text {
   font-style: normal;
+  display: inline-block;
+  padding: 10px 30px;
 }
 
 
@@ -236,6 +262,11 @@ svg {
   background: rgba(255, 255, 0, 0.545);
 }
 
+.buttonH a{
+  text-decoration: none;
+  list-style-type: none;
+}
+
 @media screen and (max-width: 576px) {
   .buttonH {
     font-size: 0.9rem;
@@ -254,7 +285,7 @@ svg {
   justify-items: center;
   align-items: baseline;
   grid-template-areas: "contenedorTabla contactForm";
-  grid-template-columns: 60% 1fr;
+  grid-template-columns: 65% 1fr;
   grid-template-rows: fit max-content;
   margin: auto;
   gap: 15px 20px;
@@ -268,7 +299,7 @@ svg {
 
 .contenedorTabla {
   grid-area: contenedorTabla;
-  width: 45vw;
+  width: 50vw;
   margin: 5px 20px 5px 40px;
 }
 
@@ -295,7 +326,7 @@ svg {
 
 .contactForm {
   grid-area: contactForm;
-  height: fit-content;
+  height: max-content;
   background-color: rgba(189, 225, 245, 0.323);
 }
 
@@ -318,13 +349,16 @@ svg {
   font-family: "Poiret One", cursive;
   font-size: 1.1rem;
   width: 100%;
+  height: 37px;
+  margin: 20px auto;
 }
 
 .radioButtons {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  padding: 15px 0px 7px 0px;
+  padding: 30px 0px 17px 0px;
+  margin-bottom: 35px;
 }
 
 .radioButtons.radio {
@@ -369,6 +403,9 @@ svg {
 .disabled{
   display: none;
 }
+
+
+
 
 
 footer {
