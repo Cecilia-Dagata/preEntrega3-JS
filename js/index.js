@@ -46,7 +46,7 @@ function traerExcursiones() {
 }
 traerExcursiones()
 
-/*barra.addEventListener("input", (e) => {
+barra.addEventListener("input", (e) => {
     contenedorCards.innerHTML = ""
 
     ingreso = e.currentTarget.value
@@ -57,7 +57,7 @@ traerExcursiones()
     } else {
         mensaje("warning", "No hay coincidencias para mostrar", "Revisa las temáticas disponibles")
     }
-})*/
+})
 
 const maquetarTabla = (excursion) => {
     return `<tr>
